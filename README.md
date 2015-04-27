@@ -25,9 +25,9 @@ Wiki in box
 
 * /
 * 	|- files			全部引用文件
-* 		|- css			全部样式文件，包括 Bootscrap、Hightlight、自定义
-* 		|- fonts		全部字体文件，目前主要是 Bootscrap
-* 		|- js			全部脚本文件，包括 Bootscrap、Hightlight、自定义
+* 	*	|- css			全部样式文件，包括 Bootscrap、Hightlight、自定义
+* 	*	|- fonts		全部字体文件，目前主要是 Bootscrap
+* 	*	|- js			全部脚本文件，包括 Bootscrap、Hightlight、自定义
 * 	|- files			全部引用文件
 * 	|- imgs				全部文章图片
 * 	|- data				全部文章源码
