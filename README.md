@@ -20,3 +20,21 @@ Wiki in box
 ## 使用说明： ##
 
 我写完代码再告诉你
+
+## 文件结构： ##
+
+* /
+* 	|- files			全部引用文件
+* 		|- css			全部样式文件，包括 Bootscrap、Hightlight、自定义
+* 		|- fonts		全部字体文件，目前主要是 Bootscrap
+* 		|- js			全部脚本文件，包括 Bootscrap、Hightlight、自定义
+* 	|- files			全部引用文件
+* 	|- imgs				全部文章图片
+* 	|- data				全部文章源码
+* 	|- index.html		唯一的页面文件，负责解读一切内容
+
+
+## 技术支持： ##
+
+* [marked](https://github.com/chjj/marked) by [chjj](https://github.com/chjj) 这是一个很不错的 Markdown 转化 Html 的工具，JavaScript 书写， Node.js 和本地都可以使用.
+* [highlight.js](https://github.com/isagalaev/highlight.js) by [isagalaev](https://github.com/isagalaev) 一个真心好用的代码高粱工具，支持 118 种代码高亮。爽得一塌糊涂，记得去他的管网下载，我就是傻乎乎的在 Github 下载的，然后被坑的好爽……
