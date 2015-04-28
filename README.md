@@ -7,6 +7,14 @@ Wiki in box
 
 但是，自己搭建 Wiki 总是需要各种环境支持，这倒不不难，但是琢磨起备份的方法来总是觉得头晕。因为本人手残，在服务器上误删网站的事情也旅游发生，所以就希望一个简简单单，放在 Dropbox 里的 Wiki 系统。当然，其实这个已经有很多人在做了，但是也许是我笨，一个都没能试验成功，索性自己操刀了……
 
+** Append: ** 我想我是被 Chrome 给坑了，他喵的不允许 Javascript 操作本地文件。所以如果你用的是 Chrome 浏览器，那么你必须搭建一个服务器。
+
+不过好消息是：在 Windows 下搭建静态服务器的软件实在是多的一塌糊涂，且十分小巧方便，比打开一个记事本可能都要省资源，那么网盘里放一个也不算什么了。
+
+Linux 下可能更简单一些，大部分系统都自带了 Python， 那么到 Wiki 根目录下运行 ```python -m SimpleHTTPServer 4000``` 然后访问 ```http://ocalhost:4000``` 即可。
+
+Mac 系统我不了解，求赞助一个供我研究……
+
 ---
 
 ## 当前状态： ##
@@ -16,8 +24,8 @@ Wiki in box
 * 网页模板 ………… OK
 * 代码转换 ………… OK
 * 文件获取 ………… OK
+* 命名空间 ………… OK
 * 样式定义
-* 命名空间
 
 ## 使用说明： ##
 
@@ -26,14 +34,14 @@ Wiki in box
 ## 文件结构： ##
 
 * /
-* 	|- files			全部引用文件
-* 	+ 	|- css			全部样式文件，包括 Bootscrap、Hightlight、自定义
-* 	+ 	|- fonts		全部字体文件，目前主要是 Bootscrap
-* 	+ 	|- js			全部脚本文件，包括 Bootscrap、Hightlight、自定义
-* 	|- files			全部引用文件
-* 	|- imgs				全部文章图片
-* 	|- data				全部文章源码
-* 	|- index.html		唯一的页面文件，负责解读一切内容
+	* 	|- files			全部引用文件
+		* 	|- css			全部样式文件，包括 Bootscrap、Hightlight、自定义
+		* 	|- fonts		全部字体文件，目前主要是 Bootscrap
+		* 	|- js			全部脚本文件，包括 Bootscrap、Hightlight、自定义
+	* 	|- files			全部引用文件
+	* 	|- imgs				全部文章图片
+	* 	|- data				全部文章源码
+	* 	|- index.html		唯一的页面文件，负责解读一切内容
 
 
 ## 技术支持： ##

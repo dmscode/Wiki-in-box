@@ -15,21 +15,59 @@
 		<script src="files/js/marked.js"></script>
 		<script src="files/js/highlight.js"></script>
 		<script>
+			// 获取 get 参数的函数
+			function QueryGET(TheName){      
+				var urlt = window.location.href.split("?");
+				if(!urlt[1]){}else{
+					var gets = urlt[1].split("&");
+					for(var i=0;i<gets.length;i++){
+						var get = gets[i].split("=");
+						if(get[0] == TheName){
+							var TheValue = get[1];
+							break;
+						}
+					}
+				}
+				return TheValue;
+			} 
 			$(document).ready(function(){
+				// 运行代码高亮库
 				hljs.initHighlightingOnLoad();
+				// 设置 Markdown 转换时代码高亮函数
 				marked.setOptions({
 					highlight: function (code) {
 						return hljs.highlightAuto(code).value;
 					}
 				});
+				// 分析地址，获取源文件地址
+				var dirurl="data";
+				name = QueryGET("name");
+				if(!name){
+					dirurl += "/index";
+				}else{
+					subnames = name.split(":"); 
+					for(i in subnames){
+						dirurl += "/" +subnames[i];
+					};
+				}
+				fileurl = dirurl + ".md";
+				// 请求 Markdown 文件
 				$.ajax({
-					url:"data/test.md",
+					url:fileurl,
 					async:true,
 					dataType:"text",
+					error:function(){
+						$("#content").html('<h3>该页面还不存在哦～</h3>');
+					},
 					success:function(markdownString){
+						// 将转换好的内容写入页面
 						$("#content").html(function(){
 							return marked(markdownString);
 						});
+						pagetitle=$("#content").find(":header:first").text();
+						if(pagetitle != ""){
+							$("title").text(pagetitle + " - Wiki in box");
+						}
 					}
 				});
 			});
@@ -47,14 +85,13 @@
 		</div> <!-- #header End -->
 		<div id="main" class="container">
 			<div class="row">
-				<div class="col-md-8 col-md-offset-2">
+				<div class="col-md-10 col-md-offset-1">
 					<div id="content">
 						Loading……
 					</div>
 				</div>
 			</div>
 		</div><!-- #content End -->
-		<div id="mdcontent"></div>
 		
 		<!-- Include all compiled plugins (below), or include individual files as needed -->
 		<script src="files/js/bootstrap.min.js"></script>
