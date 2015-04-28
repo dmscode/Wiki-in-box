@@ -43,7 +43,7 @@
 				// 分析地址，获取源文件地址
 				var dirurl="data";
 				name = QueryGET("name");
-				if(!name){
+				if(!name || name == undefined || name == "undefined"){
 					dirurl += "/index";
 				}else{
 					subnames = name.split(":"); 
