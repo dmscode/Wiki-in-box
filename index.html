@@ -8,8 +8,8 @@
 
 		<!-- Bootstrap -->
 		<link href="files/css/bootstrap.min.css" rel="stylesheet">
+		<link href="files/css/monokai_sublime.css" rel="stylesheet">
 		<link href="files/css/main.css" rel="stylesheet">
-		<link href="files/css/default.css" rel="stylesheet">
 		<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
 		<script src="files/js/jquery.min.js"></script>
 		<script src="files/js/marked.js"></script>
@@ -19,7 +19,8 @@
 			function QueryGET(TheName){      
 				var urlt = window.location.href.split("?");
 				if(!urlt[1]){}else{
-					var gets = urlt[1].split("&");
+					var clearurl = urlt[1].split("#");
+					var gets = clearurl[0].split("&");
 					for(var i=0;i<gets.length;i++){
 						var get = gets[i].split("=");
 						if(get[0] == TheName){
@@ -63,6 +64,20 @@
 						// 将转换好的内容写入页面
 						$("#content").html(function(){
 							return marked(markdownString);
+						});
+						$('pre code').each(function(){
+							var thecode = $(this).html().split('\n');
+							var code = "";
+							for(k in thecode){
+								if(!thecode[k] && k == (thecode.length-1)){}else{
+									m=k+1;
+									code +='<div class="code-line"><div class="line-num">'+(Number(k)+1)+'</div>'+thecode[k]+'</div>';
+								}
+							}
+							$(this).html(code);
+						});
+						$('#content img').each(function(){
+							$(this).wrap('<div class="img-box"></div>');
 						});
 						pagetitle=$("#content").find(":header:first").text();
 						if(pagetitle != ""){

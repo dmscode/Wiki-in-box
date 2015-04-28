@@ -59,6 +59,10 @@ Markdown 的目标是实现「易读易写」。
 
 总之， Markdown 的语法全由一些符号所组成，这些符号经过精挑细选，其作用一目了然。比如：在文字两旁加上星号，看起来就像\*强调\*。Markdown 的列表看起来，嗯，就是列表。Markdown 的区块引用看起来就真的像是引用一段文字，就像你曾在电子邮件中见过的那样。
 
+![](https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcR_UEcxP1DIot46KpnwmdXjLVAORBKPUJKClptKa_3xGSPZEM5WPg)
+
+![](http://f2.topitme.com/2/bc/d1/11454254184aad1bc2o.jpg)
+
 <h3 id="html">兼容 HTML</h3>
 
 Markdown 语法的目标是：成为一种适用于网络的*书写*语言。
@@ -196,11 +200,11 @@ Markdown 也允许你偷懒只在整个段落的第一行最前面加上 `>` ：
 
 区块引用可以嵌套（例如：引用内的引用），只要根据层次加上不同数量的 `>` ：
 
-    > This is the first level of quoting.
-    >
-    > > This is nested blockquote.
-    >
-    > Back to the first level.
+> This is the first level of quoting.
+>
+> > This is nested blockquote.
+>
+> Back to the first level.
 
 引用的区块内也可以使用其他的 Markdown 语法，包括标题、列表、代码区块等：
 
