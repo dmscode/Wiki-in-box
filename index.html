@@ -4,32 +4,36 @@
 		<meta charset="utf-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
 		<title>Wiki in box</title>
 
 		<!-- Bootstrap -->
 		<link href="files/css/bootstrap.min.css" rel="stylesheet">
-    <link href="files/css/main.css" rel="stylesheet">
+		<link href="files/css/main.css" rel="stylesheet">
 		<link href="files/css/default.css" rel="stylesheet">
-    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    <script src="files/js/jquery.min.js"></script>
-    <script src="files/js/marked.js"></script>
-    <script src="files/js/highlight.js"></script>
-    <script>
-      $(document).ready(function(){
-        hljs.initHighlightingOnLoad();
-        $("#content").html(function(){
-          // return marked('# Marked in browser\n\nRendered by **marked**.```js\n $(document).ready(function(){}); \n```');
-          markdownString = '```html\n <a href="/"><h1>Wiki in box</h1></a>  \n```';
-          marked.setOptions({
-            highlight: function (code) {
-              return hljs.highlightAuto(code).value;
-            }
-          });
-          return marked(markdownString);
-        });
-      });
-    </script>
+		<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+		<script src="files/js/jquery.min.js"></script>
+		<script src="files/js/marked.js"></script>
+		<script src="files/js/highlight.js"></script>
+		<script>
+			$(document).ready(function(){
+				hljs.initHighlightingOnLoad();
+				marked.setOptions({
+					highlight: function (code) {
+						return hljs.highlightAuto(code).value;
+					}
+				});
+				$.ajax({
+					url:"data/test.md",
+					async:true,
+					dataType:"text",
+					success:function(markdownString){
+						$("#content").html(function(){
+							return marked(markdownString);
+						});
+					}
+				});
+			});
+		</script>
 		<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
 		<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
 		<!--[if lt IE 9]>
@@ -43,14 +47,14 @@
 		</div> <!-- #header End -->
 		<div id="main" class="container">
 			<div class="row">
-        <div class="col-md-8 col-md-offset-2">
-  				<div id="content">
-            Loading……
-          </div>
-        </div>
+				<div class="col-md-8 col-md-offset-2">
+					<div id="content">
+						Loading……
+					</div>
+				</div>
 			</div>
 		</div><!-- #content End -->
-
+		<div id="mdcontent"></div>
 		
 		<!-- Include all compiled plugins (below), or include individual files as needed -->
 		<script src="files/js/bootstrap.min.js"></script>
