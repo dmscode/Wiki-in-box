@@ -65,6 +65,7 @@
 						$("#content").html(function(){
 							return marked(markdownString);
 						});
+						// 代码高亮加行号
 						$('pre code').each(function(){
 							var thecode = $(this).html().split('\n');
 							var code = "";
@@ -76,9 +77,11 @@
 							}
 							$(this).html(code);
 						});
+						// 图片设置外部元素
 						$('#content img').each(function(){
 							$(this).wrap('<div class="img-box"></div>');
 						});
+						// 设置页面标题
 						pagetitle=$("#content").find(":header:first").text();
 						if(pagetitle != ""){
 							$("title").text(pagetitle + " - Wiki in box");
