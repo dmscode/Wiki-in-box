@@ -36,10 +36,22 @@
 				hljs.initHighlightingOnLoad();
 				// 设置 Markdown 转换时代码高亮函数
 				marked.setOptions({
-					highlight: function (code) {
+					highlight: function (code,lang) {
 						return hljs.highlightAuto(code).value;
 					}
 				});
+				var renderer = new marked.Renderer();
+				renderer.image = function(href, title, text){
+					return '<div class="img-box"><img src="'+href+'" alt="'+text+'" /></div>';
+				};
+				renderer.link = function(href, title, text){
+					var reg = new RegExp("^[\\w\\-\\:]+$");
+					if(reg.test(href)){
+						return '<a href="index.html?name='+href+'">'+text+'</a>';
+					}else{
+						return '<a href="'+href+'" target="_blank">'+text+'</a>';
+					}
+				};
 				// 分析地址，获取源文件地址
 				var dirurl="data";
 				name = QueryGET("name");
@@ -63,7 +75,7 @@
 					success:function(markdownString){
 						// 将转换好的内容写入页面
 						$("#content").html(function(){
-							return marked(markdownString);
+							return marked(markdownString,{ renderer: renderer });
 						});
 						// 代码高亮加行号
 						$('pre code').each(function(){
@@ -77,10 +89,7 @@
 							}
 							$(this).html(code);
 						});
-						// 图片设置外部元素
-						$('#content img').each(function(){
-							$(this).wrap('<div class="img-box"></div>');
-						});
+
 						// 设置页面标题
 						pagetitle=$("#content").find(":header:first").text();
 						if(pagetitle != ""){

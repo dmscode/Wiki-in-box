@@ -15,7 +15,9 @@
 	http://yourname.com/?name=dir-a:dir-b:file-c
 	对应读取文件为：
 	/data/ dir-a/dir-b/file-c.md
-8. imgs 文件夹可用来储存文章图片，目录结构自行安排
+
+8. 内部链接只需要链接到页面命名，比如：```[链接到一个页面](linux:vim)```；
+9. imgs 文件夹可用来储存文章图片，目录结构自行安排
 
 ## 文件结构： ##
 
