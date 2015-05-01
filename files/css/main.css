@@ -63,6 +63,11 @@ body>#main #content p {
 	margin:0;
 	/*text-indent:2em;*/
 }
+body>#main #content h1 {
+	line-height: 2.4em;
+	border-bottom: 5px solid #DDD;
+	margin: 20px 0;
+}
 pre {
 	display: block;
 	overflow-x: auto;

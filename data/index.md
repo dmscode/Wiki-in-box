@@ -1,3 +1,6 @@
+示例文档
+===
+
 一个可以放在各种网盘，各种空间的，Markdown 语法支持的 Wiki 系统，可以用来方便的管理自己的知识碎片。欢迎各种支持～
 
 [Github 项目页](https://github.com/dmscode/Wiki-in-box)
@@ -13,7 +16,9 @@
 7. 命名空间深度无限，详细规则如下：
 
 	http://yourname.com/?name=dir-a:dir-b:file-c
+
 	对应读取文件为：
+
 	/data/ dir-a/dir-b/file-c.md
 
 8. 内部链接只需要链接到页面命名，比如：```[链接到一个页面](linux:vim)```；

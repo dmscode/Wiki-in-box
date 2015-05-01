@@ -43,7 +43,9 @@ Mac 系统我不了解，求赞助一个供我研究……
 6. 命名空间深度无限，区分大小写，详细规则如下：
 
 	http://yourname.com/?name=dir-a:dir-b:file-c
+	
 	对应读取文件为：
+	
 	/data/ dir-a/dir-b/file-c.md
 
 7. 内部链接只需要链接到页面命名，比如：```[链接到一个页面](linux:vim)```；
