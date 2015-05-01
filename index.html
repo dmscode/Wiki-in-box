@@ -30,7 +30,25 @@
 					}
 				}
 				return TheValue;
-			} 
+			}
+			function line_code(num){
+				canvas = document.getElementById('line_num_canvas');
+				if (canvas.getContext) {
+					ctx = canvas.getContext('2d');
+				}
+				canvas.width = 70;
+				canvas.height = 28;
+				ctx.font = "16px Arial"; 
+				// 设置对齐方式
+				ctx.textAlign = "right";
+				// 设置填充颜色
+				ctx.fillStyle = "#666666"; 
+				// 设置字体内容，以及在画布上的位置
+				ctx.fillText(num, 65, 21);
+				// 返回图像
+				var image = new Image();
+				return canvas.toDataURL("image/png");
+			}
 			$(document).ready(function(){
 				// 运行代码高亮库
 				hljs.initHighlightingOnLoad();
@@ -84,7 +102,7 @@
 							for(k in thecode){
 								if(!thecode[k] && k == (thecode.length-1)){}else{
 									m=k+1;
-									code +='<div class="code-line"><div class="line-num">'+(Number(k)+1)+'</div>'+thecode[k]+'</div>';
+									code +='<div class="code-line"><div class="line-num" style="background:url('+line_code(Number(k)+1)+') top right no-repeat;"></div>'+thecode[k]+'</div>';
 								}
 							}
 							$(this).html(code);
@@ -121,7 +139,10 @@
 		</div><!-- #content End -->
 		<div id="footer">
 			Power by <a href="https://github.com/dmscode/Wiki-in-box">Wiki in box</a>
-		</div> <!-- #header End -->
+		</div> <!-- #footer End -->
+		<div style="display:none">
+			<canvas id="line_num_canvas"></canvas>
+		</div>
 		<!-- Include all compiled plugins (below), or include individual files as needed -->
 		<script src="files/js/bootstrap.min.js"></script>
 	</body>

@@ -94,6 +94,7 @@ pre code .code-line .line-num {
 	position: absolute;
 	left: -77px;
 	width: 60px;
+	height: 100%;
 	padding: 0 5px;
 	text-align: right;
 	color: #666;
