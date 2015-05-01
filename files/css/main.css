@@ -36,13 +36,13 @@ body>#main {
 	margin-bottom: 15px;
 }
 body>#main #content {
-	background: #FCFCFC;
+	background: #FEFEFE;
 	padding: 35px 60px;
 	min-height: 480px;
 	border:1px solid #CECECE;
-	-webkit-box-shadow: 0 2px 2px 3px #EEE;
-	-moz-box-shadow: 0 2px 2px 3px #EEE;
-	box-shadow: 0 2px 2px 3px #EEE;
+	-webkit-box-shadow: 0 2px 3px 5px #EEE;
+	-moz-box-shadow: 0 2px 3px 5px #EEE;
+	box-shadow: 0 2px 3px 5px #EEE;
 }
 
 body>#footer {
