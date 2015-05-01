@@ -15,6 +15,8 @@ Linux 下可能更简单一些，大部分系统都自带了 Python， 那么到
 
 Mac 系统我不了解，求赞助一个供我研究……
 
+**如果你使用 Sublime Text 作为编辑器，那么，只需要安装 SublimeServer 插件(https://github.com/learning/SublimeServer)[https://github.com/learning/SublimeServer] 便可以轻松 High 翻天。本人目前的测试工作都是在这上面进行。**
+
 ---
 
 ## 当前状态： ##
@@ -29,6 +31,7 @@ Mac 系统我不了解，求赞助一个供我研究……
 * 代码复制
 * 首页文档 ………… OK
 * 页内索引
+* 自动内页链接
 
 ## 使用说明： ##
 

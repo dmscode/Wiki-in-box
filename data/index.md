@@ -6,15 +6,16 @@
 
 1. 如果你使用的是 Firefox 浏览器，那么可以把文件放在网盘，在本地使用，十分方便；
 2. 如果你使用的是 Chrome 浏览器，你需要准备一个 Http 服务器，请不要找那些大型套件，一个很小很小的 Http 服务器即可，把文件放在网站根目录，在本地使用一样爽歪；
-3. 如果你有需要，也可以以上传到网站进行展示，这不需要做任何修改，但是由于是异步读取文件内容，境外主机请慎选，否则可能也面颊在时间过长；
-4. 文件存放在 data 目录下，后缀为 md，因为本系统支持的是 Markdown 语法（[Markdown教程](http://wowubuntu.com/markdown/)）；
-5. data 目录下支持子目录；
-6. 命名空间深度无限，详细规则如下：
+3. 如果你使用 Sublime Text 作为编辑器，那么，只需要安装 SublimeServer 插件(https://github.com/learning/SublimeServer)[https://github.com/learning/SublimeServer] 便可以轻松 High 翻天
+4. 如果你有需要，也可以以上传到网站进行展示，这不需要做任何修改，但是由于是异步读取文件内容，境外主机请慎选，否则可能也面颊在时间过长；
+5. 文件存放在 data 目录下，后缀为 md，因为本系统支持的是 Markdown 语法（[Markdown教程](http://wowubuntu.com/markdown/)）；
+6. data 目录下支持子目录；
+7. 命名空间深度无限，详细规则如下：
 
 	http://yourname.com/?name=dir-a:dir-b:file-c
 	对应读取文件为：
 	/data/ dir-a/dir-b/file-c.md
-7. imgs 文件夹可用来储存文章图片，目录结构自行安排
+8. imgs 文件夹可用来储存文章图片，目录结构自行安排
 
 ## 文件结构： ##
 

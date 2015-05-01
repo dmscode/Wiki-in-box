@@ -45,6 +45,18 @@ body>#main #content {
 	box-shadow: 0 2px 2px 3px #EEE;
 }
 
+body>#footer {
+	background: #DDD;
+	width: 100%;
+	text-align: center;
+	color: #999;
+	font-size: 12px;
+	line-height: 2.4em;
+}
+body>#footer a {
+	font-size: 12px;
+	color: #999;
+}
 /*内容样式*/
 body>#main #content p {
 	padding: 0.6em 0;
