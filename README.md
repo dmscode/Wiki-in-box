@@ -11,7 +11,7 @@ Wiki in box
 
 不过好消息是：在 Windows 下搭建静态服务器的软件实在是多的一塌糊涂，且十分小巧方便，比打开一个记事本可能都要省资源，那么网盘里放一个也不算什么了。
 
-Linux 下可能更简单一些，大部分系统都自带了 Python， 那么到 Wiki 根目录下运行 ```python -m SimpleHTTPServer 4000``` 然后访问 ```http://ocalhost:4000``` 即可。
+Linux 下可能更简单一些，大部分系统都自带了 Python， 那么到 Wiki 根目录下运行 ```python -m SimpleHTTPServer 4000``` 然后访问 ```http://localhost:4000``` 即可。
 
 Mac 系统我不了解，求赞助一个供我研究……
 
