@@ -31,7 +31,9 @@ Mac 系统我不了解，求赞助一个供我研究……
 * 首页文档 ………… OK
 * 内页链接 ………… OK
 * 代码复制 ………… OK
-* 页内索引
+* 页内索引 ………… 还在犹豫它的必要性
+* 变量设置
+* 内链优化
 
 ## 使用说明： ##
 
@@ -68,4 +70,4 @@ Mac 系统我不了解，求赞助一个供我研究……
 ## 技术支持： ##
 
 * [marked](https://github.com/chjj/marked) by [chjj](https://github.com/chjj) 这是一个很不错的 Markdown 转化 Html 的工具，JavaScript 书写， Node.js 和本地都可以使用.
-* [highlight.js](https://github.com/isagalaev/highlight.js) by [isagalaev](https://github.com/isagalaev) 一个真心好用的代码高粱工具，支持 118 种代码高亮。爽得一塌糊涂，记得去他的管网下载，我就是傻乎乎的在 Github 下载的，然后被坑的好爽……
+* [highlight.js](https://github.com/isagalaev/highlight.js) by [isagalaev](https://github.com/isagalaev) 一个真心好用的代码高亮工具，支持 118 种代码高亮。爽得一塌糊涂，记得去他的管网下载，我就是傻乎乎的在 Github 下载的，然后被坑的好爽……
