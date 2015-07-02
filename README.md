@@ -31,7 +31,7 @@ Mac 系统我不了解，求赞助一个供我研究……
 * 首页文档 ………… OK
 * 内页链接 ………… OK
 * 代码复制 ………… OK
-* 页内索引 ………… **OK**
+* 页内索引 ………… **Beta**
 * 数学公式 ………… OK
 * 变量设置
 * 内链优化
@@ -73,4 +73,4 @@ Mac 系统我不了解，求赞助一个供我研究……
 
 * [marked](https://github.com/chjj/marked) by [chjj](https://github.com/chjj) 这是一个很不错的 Markdown 转化 Html 的工具，JavaScript 书写， Node.js 和本地都可以使用.
 * [highlight.js](https://github.com/isagalaev/highlight.js) by [isagalaev](https://github.com/isagalaev) 一个真心好用的代码高亮工具，支持 118 种代码高亮。爽得一塌糊涂，记得去他的管网下载，我就是傻乎乎的在 Github 下载的，然后被坑的好爽……
-* [toc](https://github.com/jgallen23/toc) by [jgallen23](https://github.com/jgallen23) 这是一个业内索引 jQuery 插件.
+* [toc](https://github.com/jgallen23/toc) by [jgallen23](https://github.com/jgallen23) 这是一个业内索引 jQuery 插件. 不幸的是，此插件存在点击目录定位不准的问题。
