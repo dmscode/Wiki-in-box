@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Whzecomjm's Wiki</title>
+
+		<!-- Bootstrap -->
+		<link href="files/css/bootstrap.min.css" rel="stylesheet">
+		<link href="files/css/rainbow.css" rel="stylesheet">
+		<link href="files/css/main.css" rel="stylesheet">
+		<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+		<script src="files/js/jquery.min.js"></script>
+		<script src="files/js/marked.js"></script>
+		<script src="files/js/highlight.js"></script>
+		<script>
+			// 获取 get 参数的函数
+			function QueryGET(TheName){      
+				var urlt = window.location.href.split("?");
+				if(!urlt[1]){}else{
+					var clearurl = urlt[1].split("#");
+					var gets = clearurl[0].split("&");
+					for(var i=0;i<gets.length;i++){
+						var get = gets[i].split("=");
+						if(get[0] == TheName){
+							var TheValue = get[1];
+							break;
+						}
+					}
+				}
+				return TheValue;
+			}
+			function line_code(num){
+				canvas = document.getElementById('line_num_canvas');
+				if (canvas.getContext) {
+					ctx = canvas.getContext('2d');
+				}
+				canvas.width = 70;
+				canvas.height = 28;
+				ctx.font = "16px Arial"; 
+				// 设置对齐方式
+				ctx.textAlign = "right";
+				// 设置填充颜色
+				ctx.fillStyle = "#888888"; 
+				// 设置字体内容，以及在画布上的位置
+				ctx.fillText(num, 65, 21);
+				// 返回图像
+				var image = new Image();
+				return canvas.toDataURL("image/png");
+			}
+			$(document).ready(function(){
+				// 运行代码高亮库
+				hljs.initHighlightingOnLoad();
+				// 设置 Markdown 转换时代码高亮函数
+				marked.setOptions({
+					highlight: function (code,lang) {
+						return hljs.highlightAuto(code).value;
+					}
+				});
+				var renderer = new marked.Renderer();
+				renderer.image = function(href, title, text){
+					return '<div class="img-box"><img src="'+href+'" alt="'+text+'" /></div>';
+				};
+				renderer.link = function(href, title, text){
+					var reg = new RegExp("^[\\w\\-\\:]+$");
+					if(reg.test(href)){
+						return '<a href="latex.html?name='+href+'">'+text+'</a>';
+					}else{
+						return '<a href="'+href+'" target="_blank">'+text+'</a>';
+					}
+				};
+				// 分析地址，获取源文件地址
+				var dirurl="data";
+				name = QueryGET("name");
+				if(!name || name == undefined || name == "undefined"){
+					dirurl += "/index";
+				}else{
+					subnames = name.split(":"); 
+					for(i in subnames){
+						dirurl += "/" +subnames[i];
+					};
+				}
+				fileurl = dirurl + ".md";
+				// 请求 Markdown 文件
+				$.ajax({
+					url:fileurl,
+					async:true,
+					dataType:"text",
+					error:function(){
+						$("#content").html('<h3>该页面还不存在哦～</h3>');
+					},
+					success:function(markdownString){
+						// 将转换好的内容写入页面
+						$("#content").html(function(){
+							return marked(markdownString,{ renderer: renderer });
+						});
+						// 代码高亮加行号
+						$('pre code').each(function(){
+							var thecode = $(this).html().split('\n');
+							var code = "";
+							for(k in thecode){
+								if(!thecode[k] && k == (thecode.length-1)){}else{
+									m=k+1;
+									code +='<div class="code-line"><div class="line-num" style="background:url('+line_code(Number(k)+1)+') top right no-repeat;"></div>'+thecode[k]+'</div>';
+								}
+							}
+							$(this).html(code);
+						});
+
+						// 设置页面标题
+						pagetitle=$("#content").find(":header:first").text();
+						if(pagetitle != ""){
+							$("title").text(pagetitle + " - Wiki in box");
+						}
+					}
+				});
+			});
+		</script>
+		<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+		<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+		<!--[if lt IE 9]>
+			<script src="http://cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+			<script src="http://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+		<![endif]-->
+	</head>
+	<body>
+		<div id="header">
+			<a href="latex.html"><h1>Whzecomjm's Wiki</h1></a>
+		</div> <!-- #header End -->
+		<div id="main" class="container">
+			<div class="row">
+				<div class="col-md-8 col-md-offset-2">
+					<div id="content">
+						Loading……
+					</div>
+				</div>
+			</div>
+		</div><!-- #content End -->
+		<div id="footer">
+			Power by <a href="https://github.com/dmscode/Wiki-in-box">Wiki in box</a>
+		</div> <!-- #footer End -->
+		<div style="display:none">
+			<canvas id="line_num_canvas"></canvas>
+		</div>
+		<!-- Include all compiled plugins (below), or include individual files as needed -->
+		<script src="files/js/bootstrap.min.js"></script>
+	</body>
+<script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        extensions: ["tex2jax.js"],
+        jax: ["input/TeX", "output/HTML-CSS"],
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+          displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+          processEscapes: true
+        },
+        "HTML-CSS": { availableFonts: ["TeX"] ,scale: 90}
+      });
+</script>
+<script 
+type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML">
+</script>
+</html>
