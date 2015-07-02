@@ -31,7 +31,8 @@ Mac 系统我不了解，求赞助一个供我研究……
 * 首页文档 ………… OK
 * 内页链接 ………… OK
 * 代码复制 ………… OK
-* 页内索引 ………… 还在犹豫它的必要性
+* 页内索引 ………… **OK**
+* 数学公式 ………… OK
 * 变量设置
 * 内链优化
 
@@ -39,7 +40,7 @@ Mac 系统我不了解，求赞助一个供我研究……
 
 1. 如果你使用的是 Firefox 浏览器，那么可以把文件放在网盘，在本地使用，十分方便；
 2. 如果你使用的是 Chrome 浏览器，你需要准备一个 Http 服务器，请不要找那些大型套件，一个很小很小的 Http 服务器即可，把文件放在网站根目录，在本地使用一样爽歪；
-3. 如果你有需要，也可以以上传到网站进行展示，这不需要做任何修改，但是由于是异步读取文件内容，境外主机请慎选，否则可能也面颊在时间过长；
+3. 如果你有需要，也可以以上传到网站进行展示，这不需要做任何修改，但是由于是异步读取文件内容，境外主机请慎选，否则可能页面加载时间过长；
 4. 文件存放在 data 目录下，后缀为 md，因为本系统支持的是 Markdown 语法（[Markdown教程](http://wowubuntu.com/markdown/)）；
 5. data 目录下支持子目录；
 6. 命名空间深度无限，区分大小写，详细规则如下：
@@ -52,6 +53,7 @@ Mac 系统我不了解，求赞助一个供我研究……
 
 7. 内部链接只需要链接到页面命名，比如：```[链接到一个页面](linux:vim)```；
 8. imgs 文件夹可用来储存文章图片，目录结构自行安排；
+9. 打开 latex.html 文件可以浏览相应加载 MathJax 的 md 文档；
 
 ## 文件结构： ##
 
@@ -60,14 +62,15 @@ Mac 系统我不了解，求赞助一个供我研究……
 		* 	|- css			全部样式文件，包括 Bootscrap、Hightlight、自定义
 		* 	|- fonts		全部字体文件，目前主要是 Bootscrap
 		* 	|- js			全部脚本文件，包括 Bootscrap、Hightlight、自定义
-	* 	|- files			全部引用文件
 	* 	|- imgs				全部文章图片
 	* 	|- data				全部文章源码
 		*	|- index.md		默认显示文档，建议用作索引
 	* 	|- index.html		唯一的页面文件，负责解读一切内容
+         * 	|- latex.html		新增的页面文件，用于解读带LaTeX公式的内容
 
 
 ## 技术支持： ##
 
 * [marked](https://github.com/chjj/marked) by [chjj](https://github.com/chjj) 这是一个很不错的 Markdown 转化 Html 的工具，JavaScript 书写， Node.js 和本地都可以使用.
 * [highlight.js](https://github.com/isagalaev/highlight.js) by [isagalaev](https://github.com/isagalaev) 一个真心好用的代码高亮工具，支持 118 种代码高亮。爽得一塌糊涂，记得去他的管网下载，我就是傻乎乎的在 Github 下载的，然后被坑的好爽……
+* [toc](https://github.com/jgallen23/toc) by [jgallen23](https://github.com/jgallen23) 这是一个业内索引 jQuery 插件.
