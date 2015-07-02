@@ -12,6 +12,7 @@
 		<link href="files/css/main.css" rel="stylesheet">
 		<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
 		<script src="files/js/jquery.min.js"></script>
+		<script src="files/js/toc.min.js"></script>
 		<script src="files/js/marked.js"></script>
 		<script src="files/js/highlight.js"></script>
 		<script>
@@ -95,6 +96,7 @@
 						$("#content").html(function(){
 							return marked(markdownString,{ renderer: renderer });
 						});
+						$('#toc').toc();
 						// 代码高亮加行号
 						$('pre code').each(function(){
 							var thecode = $(this).html().split('\n');
@@ -131,6 +133,7 @@
 		<div id="main" class="container">
 			<div class="row">
 				<div class="col-md-8 col-md-offset-2">
+				    <div id="toc"></div>
 					<div id="content">
 						Loading……
 					</div>
