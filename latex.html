@@ -4,15 +4,14 @@
 		<meta charset="utf-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<title>Wiki in box</title>
+		<title>Whzecomjm's Wiki</title>
 
 		<!-- Bootstrap -->
 		<link href="files/css/bootstrap.min.css" rel="stylesheet">
-		<link href="files/css/monokai_sublime.css" rel="stylesheet">
+		<link href="files/css/rainbow.css" rel="stylesheet">
 		<link href="files/css/main.css" rel="stylesheet">
 		<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
 		<script src="files/js/jquery.min.js"></script>
-		<script src="files/js/toc.min.js"></script>
 		<script src="files/js/marked.js"></script>
 		<script src="files/js/highlight.js"></script>
 		<script>
@@ -66,7 +65,7 @@
 				renderer.link = function(href, title, text){
 					var reg = new RegExp("^[\\w\\-\\:]+$");
 					if(reg.test(href)){
-						return '<a href="index.html?name='+href+'">'+text+'</a>';
+						return '<a href="latex.html?name='+href+'">'+text+'</a>';
 					}else{
 						return '<a href="'+href+'" target="_blank">'+text+'</a>';
 					}
@@ -96,7 +95,6 @@
 						$("#content").html(function(){
 							return marked(markdownString,{ renderer: renderer });
 						});
-						$('#toc').toc();
 						// 代码高亮加行号
 						$('pre code').each(function(){
 							var thecode = $(this).html().split('\n');
@@ -128,12 +126,11 @@
 	</head>
 	<body>
 		<div id="header">
-			<a href="index.html"><h1>Wiki in box</h1></a>
+			<a href="latex.html"><h1>Whzecomjm's Wiki</h1></a>
 		</div> <!-- #header End -->
 		<div id="main" class="container">
 			<div class="row">
 				<div class="col-md-8 col-md-offset-2">
-				    <div id="toc"></div>
 					<div id="content">
 						Loading……
 					</div>
@@ -149,4 +146,19 @@
 		<!-- Include all compiled plugins (below), or include individual files as needed -->
 		<script src="files/js/bootstrap.min.js"></script>
 	</body>
+<script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        extensions: ["tex2jax.js"],
+        jax: ["input/TeX", "output/HTML-CSS"],
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+          displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+          processEscapes: true
+        },
+        "HTML-CSS": { availableFonts: ["TeX"] ,scale: 90}
+      });
+</script>
+<script 
+type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML">
+</script>
 </html>

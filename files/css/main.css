@@ -1,4 +1,3 @@
-/*为什么在写之前还有一点小激动呢？*/
 *{
 	font-family: Arial, 'Microsoft YaHei';
 	font-size: 16px;
@@ -115,4 +114,70 @@ body>#main #content blockquote {
 }
 body>#main #content blockquote>blockquote {
 	background: #FFF;
+}
+
+table{
+	font-family:verdana,arial,sans-serif;
+	color:#333;border-width:1px;
+	border-color:#666;
+	border-collapse:collapse;
+	font-size:14px
+}
+table th{
+	border-width:1px;
+	padding:8px;
+	border-style:solid;
+	border-color:#666;
+	font-weight:bold;
+	background-color:#d1d1d1
+}
+table td{
+	border-width:1px;
+	padding:8px;
+	border-style:solid;
+	border-color:#666
+}
+table tr:nth-child(even){
+	background-color: #f2f2f2;
+}
+table tr:nth-child(odd){
+	background-color: #fff;
+}
+
+#toc {
+    top: 0px;
+    left: 0px;
+    height: 100%;
+    position: fixed;
+    background: #333;
+    box-shadow: inset -5px 0 5px 0px #222;
+    width: 220px;
+    padding-top: 20px;
+    color: #fff;
+}
+
+#toc ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+#toc li {
+    padding: 5px 10px;
+}
+#toc a {
+    color: #fff;
+    text-decoration: none;
+    display: block;
+}
+#toc .toc-h2 {
+    padding-left: 15px;
+}
+#toc .toc-h3 {
+    font-size: 80%;
+    padding-left: 23px;
+}
+#toc .toc-active {
+    background: #336699;
+    box-shadow: inset -5px 0px 10px -5px #000;
 }
