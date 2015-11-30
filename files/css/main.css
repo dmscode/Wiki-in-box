@@ -1,5 +1,11 @@
+/*为什么在写之前还有一点小激动呢？*/
 *{
-	font-family: Arial, 'Microsoft YaHei';
+	font-family: "Consolas", "lucida grande", "lucida sans unicode", lucida, helvetica, "Hiragino Sans GB", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;
+}
+html,
+body {
+	margin: 0;
+	background: #EFEFEF;
 	font-size: 16px;
 	line-height: 1.8em;
 }
@@ -7,12 +13,8 @@ a {
 	text-decoration: none;
 }
 a:hover {
+	color: #F92672;
 	text-decoration: none;
-}
-html,
-body {
-	margin:0;
-	background: #EFEFEF;
 }
 body>#header {
 	background: #22222C;
@@ -31,8 +33,7 @@ body>#header h1 {
 	margin: 0;
 }
 body>#main {
-	margin-top: 15px;
-	margin-bottom: 15px;
+	padding: 15px 0;
 }
 body>#main #content {
 	background: #FEFEFE;
@@ -43,17 +44,16 @@ body>#main #content {
 	-moz-box-shadow: 0 2px 3px 5px #EEE;
 	box-shadow: 0 2px 3px 5px #EEE;
 }
-
 body>#footer {
 	background: #DDD;
 	width: 100%;
 	text-align: center;
 	color: #999;
-	font-size: 12px;
+	font-size: 0.75em;
 	line-height: 2.4em;
 }
 body>#footer a {
-	font-size: 12px;
+	font-size: 0.75em;
 	color: #999;
 }
 /*内容样式*/
@@ -63,25 +63,68 @@ body>#main #content p {
 	/*text-indent:2em;*/
 }
 body>#main #content h1 {
+	font-size: 2em;
 	line-height: 2.4em;
 	border-bottom: 5px solid #DDD;
-	margin: 20px 0;
+	padding: 0 60px;
+	margin: 20px -60px;
+}
+body>#main #content h2 {
+	font-size: 1.4em;
+	line-height: 1.6em;
+	color: #EFEFEF;
+	padding: 0 60px;
+	margin: 20px -60px;
+	background-color: #22222C;
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	-ms-border-radius: 3px;
+	-o-border-radius: 3px;
+	border-radius: 3px;
+}
+body>#main #content h3 {
+	font-size: 1.4em;
+	line-height: 1.6em;
+	padding: 0 60px;
+	margin: 20px -60px;
+	background-color: #DDD;
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	-ms-border-radius: 3px;
+	-o-border-radius: 3px;
+	border-radius: 3px;
+}
+body>#main #content h4 {
+	font-size: 1.4em;
+	line-height: 1.8em;
+}
+body>#main #content h5 {
+	font-size: 1.2em;
+	font-weight: bold;
+	line-height: 1.8em;
+	color: #666;
+}
+body>#main #content h6 {
+	font-size: 1.1em;
+	line-height: 1.8em;
+	font-weight: bold;
+	color: #999;
 }
 pre {
 	display: block;
 	overflow-x: auto;
-	word-wrap: break-word; 
-	word-break: normal; 
+	word-wrap: break-word;
+	word-break: normal;
 	padding: 0 60px;
 	margin: 0.6em -60px;
 	background: #23241f;
 	color: #f8f8f2;
-	font-size: 16px;
 	-webkit-text-size-adjust: none;
 }
 pre code {
+	font-size: 16px;
 	display: block;
-	padding: 35px 15px;
+	padding: 15px 15px;
 	margin:0;
 	border-left:2px solid #666;
 }
@@ -108,76 +151,140 @@ body>#main #content .img-box img {
 	margin: 0 auto;
 	max-width: 100%;
 }
-body>#main #content blockquote {
+body>#main #content blockquote,
+body>#main #content blockquote>blockquote>blockquote,
+body>#main #content blockquote>blockquote>blockquote>blockquote>blockquote {
 	background: #F6F6F6;
 	border-left: 5px solid #DDDDE3;
 }
-body>#main #content blockquote>blockquote {
+body>#main #content blockquote>blockquote,
+body>#main #content blockquote>blockquote>blockquote>blockquote {
 	background: #FFF;
 }
-
-table{
-	font-family:verdana,arial,sans-serif;
-	color:#333;border-width:1px;
-	border-color:#666;
-	border-collapse:collapse;
-	font-size:14px
+ {
+	background: #F6F6F6;
 }
-table th{
-	border-width:1px;
-	padding:8px;
-	border-style:solid;
-	border-color:#666;
-	font-weight:bold;
-	background-color:#d1d1d1
+body>#main #content table {
+	border: 2px solid #DDD;
+	margin: 0.6em auto;
 }
-table td{
-	border-width:1px;
-	padding:8px;
-	border-style:solid;
-	border-color:#666
+body>#main #content table td,
+body>#main #content table th {
+	padding: 5px 10px;
+	border: 1px solid #DDD;
 }
-table tr:nth-child(even){
-	background-color: #f2f2f2;
-}
-table tr:nth-child(odd){
-	background-color: #fff;
+body>#main #content table th {
+	background-color: #EFEFEF;
 }
 
+#toc-box {
+	position: fixed;
+	z-index: 10;
+	bottom: 0;
+	max-height: 80%;
+	left: center;
+	background-color: #22222C;
+	padding: 10px 35px 0;
+	margin: 0 -35px;
+	-webkit-box-shadow: 0 -2px 12px #333;
+	box-shadow: 0 -2px 12px #333;
+	-webkit-border-radius: 6px 6px 0 0;
+	-moz-border-radius: 6px 6px 0 0;
+	-ms-border-radius: 6px 6px 0 0;
+	-o-border-radius: 6px 6px 0 0;
+	border-radius: 6px 6px 0 0;
+	border-top: 1px solid rgba(255,255,255,0.3);
+	border-right: 1px solid rgba(255,255,255,0.3);
+}
+#toc-box .menu {
+	position: absolute;
+	top: -30px;
+	left: 50%;
+	width: 60px;
+	height: 60px;
+	margin-left: -30px;
+	background-color: #22222C;
+	-webkit-border-radius: 40px;
+	-moz-border-radius: 40px;
+	-ms-border-radius: 40px;
+	-o-border-radius: 40px;
+	border-radius: 40px;
+	color: #DDD;
+	font-size: 20px;
+	line-height: 50px;
+	text-align: center;
+	cursor: pointer;
+}
+#toc-box .menu:before {
+	content: " ";
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: -10;
+	width: 60px;
+	height: 60px;
+	background-color: #22222C;
+	-webkit-border-radius: 40px;
+	-moz-border-radius: 40px;
+	-ms-border-radius: 40px;
+	-o-border-radius: 40px;
+	border-radius: 40px;
+	-webkit-box-shadow: 0 -2px 12px #333;
+	box-shadow: 0 -2px 12px #333;
+}
 #toc {
-    top: 0px;
-    left: 0px;
-    height: 100%;
-    position: fixed;
-    background: #333;
-    box-shadow: inset -5px 0 5px 0px #222;
-    width: 220px;
-    padding-top: 20px;
-    color: #fff;
+	position: relative;
+	z-index: 100;
+	background-color: #FFF;
+	padding: 10px 25px 0;
+	margin: 0 -25px;
+	-webkit-box-shadow: 0 2px 3px #999 inset;
+	box-shadow: 0 2px 3px #999 inset;
+	-webkit-border-radius: 6px 6px 0 0;
+	-moz-border-radius: 6px 6px 0 0;
+	-ms-border-radius: 6px 6px 0 0;
+	-o-border-radius: 6px 6px 0 0;
+	border-radius: 6px 6px 0 0;
+	border-top: 1px solid #333;
+	border-right: 1px solid #333;
+	overflow-y: auto;
+	display: none;
 }
-
 #toc ul {
-    margin: 0;
-    padding: 0;
-    list-style: none;
+	margin: 0;
+	padding: 0;
+	list-style: none;
 }
-
 #toc li {
-    padding: 5px 10px;
+	border-bottom: 1px dashed #DDD;
+	word-wrap: break-word;
+	word-break: normal;
+}
+#toc li:last-child {
+	border: none;
 }
 #toc a {
-    color: #fff;
     text-decoration: none;
     display: block;
 }
 #toc .toc-h2 {
-    padding-left: 15px;
+    padding-left: 30px;
 }
 #toc .toc-h3 {
-    font-size: 80%;
-    padding-left: 23px;
+    padding-left: 60px;
+}
+#toc .toc-h4 {
+    padding-left: 90px;
+}
+#toc .toc-h5 {
+    padding-left: 120px;
+}
+#toc .toc-h6 {
+    padding-left: 150px;
 }
 #toc .toc-active {
-    background: #336699;
-    box-shadow: inset -5px 0px 10px -5px #000;
+    background-color: #F92672;
+}
+#toc .toc-active a {
+    color: #FFF;
 }
