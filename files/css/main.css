@@ -1,132 +1,132 @@
 /*为什么在写之前还有一点小激动呢？*/
-*{
-	font-family: "Consolas", "lucida grande", "lucida sans unicode", lucida, helvetica, "Hiragino Sans GB", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;
+* {
+	font-family: 'Consolas', 'lucida grande', 'lucida sans unicode', lucida, helvetica, 'Hiragino Sans GB', 'Microsoft YaHei', 'WenQuanYi Micro Hei', sans-serif;
 }
 html,
 body {
-	margin: 0;
-	background: #EFEFEF;
 	font-size: 16px;
 	line-height: 1.8em;
+	margin: 0;
+	background: #efefef;
 }
 a {
 	text-decoration: none;
 }
 a:hover {
-	color: #F92672;
 	text-decoration: none;
+	color: #f92672;
 }
-body>#header {
-	background: #22222C;
+body > #header {
+	overflow: hidden;
 	width: 100%;
 	height: 200px;
 	padding-top: 80px;
-	color: #EFEFEF;
-	overflow: hidden;
+	color: #efefef;
+	background: #22222c;
 }
-body>#header a {
-	color: #EFEFEF;
+body > #header a {
+	color: #efefef;
 }
-body>#header h1 {
-	text-align: center;
+body > #header h1 {
 	line-height: 84px;
 	margin: 0;
+	text-align: center;
 }
-body>#main {
+body > #main {
 	padding: 15px 0;
 }
-body>#main #content {
-	background: #FEFEFE;
-	padding: 35px 60px;
+body > #main #content {
 	min-height: 480px;
-	border:1px solid #CECECE;
-	-webkit-box-shadow: 0 2px 3px 5px #EEE;
-	-moz-box-shadow: 0 2px 3px 5px #EEE;
-	box-shadow: 0 2px 3px 5px #EEE;
+	padding: 35px 60px;
+	border: 1px solid #cecece;
+	background: #fefefe;
+	-webkit-box-shadow: 0 2px 3px 5px #eee;
+	-moz-box-shadow: 0 2px 3px 5px #eee;
+	box-shadow: 0 2px 3px 5px #eee;
 }
-body>#footer {
-	background: #DDD;
+body > #footer {
+	font-size: .75em;
+	line-height: 2.4em;
 	width: 100%;
 	text-align: center;
 	color: #999;
-	font-size: 0.75em;
-	line-height: 2.4em;
+	background: #ddd;
 }
-body>#footer a {
-	font-size: 0.75em;
+body > #footer a {
+	font-size: .75em;
 	color: #999;
 }
 /*内容样式*/
-body>#main #content p {
-	padding: 0.6em 0;
-	margin:0;
+body > #main #content p {
+	margin: 0;
+	padding: .6em 0;
 	/*text-indent:2em;*/
 }
-body>#main #content h1 {
+body > #main #content h1 {
 	font-size: 2em;
 	line-height: 2.4em;
-	border-bottom: 5px solid #DDD;
-	padding: 0 60px;
 	margin: 20px -60px;
+	padding: 0 60px;
+	border-bottom: 5px solid #ddd;
 }
-body>#main #content h2 {
+body > #main #content h2 {
 	font-size: 1.4em;
 	line-height: 1.6em;
-	color: #EFEFEF;
-	padding: 0 60px;
 	margin: 20px -60px;
-	background-color: #22222C;
+	padding: 0 60px;
+	color: #efefef;
 	-webkit-border-radius: 3px;
 	-moz-border-radius: 3px;
+	border-radius: 3px;
+	background-color: #22222c;
 	-ms-border-radius: 3px;
 	-o-border-radius: 3px;
-	border-radius: 3px;
 }
-body>#main #content h3 {
+body > #main #content h3 {
 	font-size: 1.4em;
 	line-height: 1.6em;
-	padding: 0 60px;
 	margin: 20px -60px;
-	background-color: #DDD;
+	padding: 0 60px;
 	-webkit-border-radius: 3px;
 	-moz-border-radius: 3px;
+	border-radius: 3px;
+	background-color: #ddd;
 	-ms-border-radius: 3px;
 	-o-border-radius: 3px;
-	border-radius: 3px;
 }
-body>#main #content h4 {
+body > #main #content h4 {
 	font-size: 1.4em;
 	line-height: 1.8em;
 }
-body>#main #content h5 {
+body > #main #content h5 {
 	font-size: 1.2em;
 	font-weight: bold;
 	line-height: 1.8em;
 	color: #666;
 }
-body>#main #content h6 {
+body > #main #content h6 {
 	font-size: 1.1em;
-	line-height: 1.8em;
 	font-weight: bold;
+	line-height: 1.8em;
 	color: #999;
 }
 pre {
 	display: block;
 	overflow-x: auto;
+	margin: .6em -60px;
+	padding: 0 60px;
 	word-wrap: break-word;
 	word-break: normal;
-	padding: 0 60px;
-	margin: 0.6em -60px;
-	background: #23241f;
 	color: #f8f8f2;
+	background: #23241f;
 	-webkit-text-size-adjust: none;
 }
 pre code {
 	font-size: 16px;
 	display: block;
+	margin: 0;
 	padding: 15px 15px;
-	margin:0;
-	border-left:2px solid #666;
+	border-left: 2px solid #666;
 }
 pre code .code-line {
 	position: relative;
@@ -141,114 +141,112 @@ pre code .code-line .line-num {
 	text-align: right;
 	color: #666;
 }
-body>#main #content .img-box {
+body > #main #content .img-box {
+	margin: .6em -60px;
 	padding: 0;
-	margin: 0.6em -60px;
 }
-body>#main #content .img-box img {
-	padding: 0;
+body > #main #content .img-box img {
 	display: block;
-	margin: 0 auto;
 	max-width: 100%;
+	margin: 0 auto;
+	padding: 0;
 }
-body>#main #content blockquote,
-body>#main #content blockquote>blockquote>blockquote,
-body>#main #content blockquote>blockquote>blockquote>blockquote>blockquote {
-	background: #F6F6F6;
-	border-left: 5px solid #DDDDE3;
+body > #main #content blockquote,
+body > #main #content blockquote > blockquote>blockquote,
+body > #main #content blockquote > blockquote > blockquote > blockquote>blockquote {
+	border-left: 5px solid #dddde3;
+	background: #f6f6f6;
 }
-body>#main #content blockquote>blockquote,
-body>#main #content blockquote>blockquote>blockquote>blockquote {
-	background: #FFF;
+body > #main #content blockquote > blockquote,
+body > #main #content blockquote > blockquote > blockquote>blockquote {
+	background: #fff;
+} {
+	background: #f6f6f6;
 }
- {
-	background: #F6F6F6;
+body > #main #content table {
+	margin: .6em auto;
+	border: 2px solid #ddd;
 }
-body>#main #content table {
-	border: 2px solid #DDD;
-	margin: 0.6em auto;
-}
-body>#main #content table td,
-body>#main #content table th {
+body > #main #content table td,
+body > #main #content table th {
 	padding: 5px 10px;
-	border: 1px solid #DDD;
+	border: 1px solid #ddd;
 }
-body>#main #content table th {
-	background-color: #EFEFEF;
+body > #main #content table th {
+	background-color: #efefef;
 }
-
 #toc-box {
 	position: fixed;
 	z-index: 10;
 	bottom: 0;
-	max-height: 80%;
 	left: center;
-	background-color: #22222C;
-	padding: 10px 35px 0;
+	max-height: 80%;
 	margin: 0 -35px;
-	-webkit-box-shadow: 0 -2px 12px #333;
-	box-shadow: 0 -2px 12px #333;
+	padding: 10px 35px 0;
+	border-top: 1px solid rgba(255,255,255,.3);
+	border-right: 1px solid rgba(255,255,255,.3);
 	-webkit-border-radius: 6px 6px 0 0;
 	-moz-border-radius: 6px 6px 0 0;
+	border-radius: 6px 6px 0 0;
+	background-color: #22222c;
+	-webkit-box-shadow: 0 -2px 12px #333;
+	box-shadow: 0 -2px 12px #333;
 	-ms-border-radius: 6px 6px 0 0;
 	-o-border-radius: 6px 6px 0 0;
-	border-radius: 6px 6px 0 0;
-	border-top: 1px solid rgba(255,255,255,0.3);
-	border-right: 1px solid rgba(255,255,255,0.3);
 }
 #toc-box .menu {
+	font-size: 20px;
+	line-height: 50px;
 	position: absolute;
 	top: -30px;
 	left: 50%;
 	width: 60px;
 	height: 60px;
 	margin-left: -30px;
-	background-color: #22222C;
+	cursor: pointer;
+	text-align: center;
+	color: #ddd;
 	-webkit-border-radius: 40px;
 	-moz-border-radius: 40px;
+	border-radius: 40px;
+	background-color: #22222c;
 	-ms-border-radius: 40px;
 	-o-border-radius: 40px;
-	border-radius: 40px;
-	color: #DDD;
-	font-size: 20px;
-	line-height: 50px;
-	text-align: center;
-	cursor: pointer;
 }
 #toc-box .menu:before {
-	content: " ";
 	position: absolute;
+	z-index: -10;
 	top: 0;
 	left: 0;
-	z-index: -10;
 	width: 60px;
 	height: 60px;
-	background-color: #22222C;
+	content: ' ';
 	-webkit-border-radius: 40px;
 	-moz-border-radius: 40px;
-	-ms-border-radius: 40px;
-	-o-border-radius: 40px;
 	border-radius: 40px;
+	background-color: #22222c;
 	-webkit-box-shadow: 0 -2px 12px #333;
 	box-shadow: 0 -2px 12px #333;
+	-ms-border-radius: 40px;
+	-o-border-radius: 40px;
 }
 #toc {
 	position: relative;
 	z-index: 100;
-	background-color: #FFF;
-	padding: 10px 25px 0;
+	display: none;
+	overflow-y: auto;
 	margin: 0 -25px;
-	-webkit-box-shadow: 0 2px 3px #999 inset;
-	box-shadow: 0 2px 3px #999 inset;
-	-webkit-border-radius: 6px 6px 0 0;
-	-moz-border-radius: 6px 6px 0 0;
-	-ms-border-radius: 6px 6px 0 0;
-	-o-border-radius: 6px 6px 0 0;
-	border-radius: 6px 6px 0 0;
+	padding: 10px 25px 0;
 	border-top: 1px solid #333;
 	border-right: 1px solid #333;
-	overflow-y: auto;
-	display: none;
+	-webkit-border-radius: 6px 6px 0 0;
+	-moz-border-radius: 6px 6px 0 0;
+	border-radius: 6px 6px 0 0;
+	background-color: #fff;
+	-webkit-box-shadow: 0 2px 3px #999 inset;
+	box-shadow: 0 2px 3px #999 inset;
+	-ms-border-radius: 6px 6px 0 0;
+	-o-border-radius: 6px 6px 0 0;
 }
 #toc ul {
 	margin: 0;
@@ -256,35 +254,35 @@ body>#main #content table th {
 	list-style: none;
 }
 #toc li {
-	border-bottom: 1px dashed #DDD;
 	word-wrap: break-word;
 	word-break: normal;
+	border-bottom: 1px dashed #ddd;
 }
 #toc li:last-child {
 	border: none;
 }
 #toc a {
-    text-decoration: none;
-    display: block;
+	display: block;
+	text-decoration: none;
 }
 #toc .toc-h2 {
-    padding-left: 30px;
+	padding-left: 30px;
 }
 #toc .toc-h3 {
-    padding-left: 60px;
+	padding-left: 60px;
 }
 #toc .toc-h4 {
-    padding-left: 90px;
+	padding-left: 90px;
 }
 #toc .toc-h5 {
-    padding-left: 120px;
+	padding-left: 120px;
 }
 #toc .toc-h6 {
-    padding-left: 150px;
+	padding-left: 150px;
 }
 #toc .toc-active {
-    background-color: #F92672;
+	background-color: #f92672;
 }
 #toc .toc-active a {
-    color: #FFF;
+	color: #fff;
 }
